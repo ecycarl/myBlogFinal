@@ -1,0 +1,118 @@
+.home-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+ 
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.loading-text,
+.no-posts {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Table wrapper for horizontal scrolling on small screens */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* Posts table */
+.posts-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* ensures responsiveness */
+}
+
+.posts-table th,
+.posts-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #0e0b0b;
+}
+
+.posts-table th {
+  background-color: #150202;
+  font-weight: 600;
+}
+
+.posts-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-post-image {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.table-post-title {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.table-post-title:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .posts-table th,
+  .posts-table td {
+    padding: 8px 10px;
+  }
+
+  .table-post-image {
+    width: 60px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .posts-table {
+    font-size: 12px;
+    min-width: 400px;
+  }
+}
+
+.recent-posts-title {
+  margin: 20px 0 10px;
+  font-size: 20px;
+  color: #333;
+  text-align: left;
+}
+
+.recent-posts-row th {
+  text-align: center;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.current-user {
+  display: flex;
+  align-items: center;         /* vertical alignment */
+  justify-content: flex-end;   /* align right */
+  gap: 10px;                   /* space between text and image */
+  margin-bottom: 20px;
+}
+
+.nav-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;          /* circular avatar */
+  object-fit: cover;
+}
+
+.table-post-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}

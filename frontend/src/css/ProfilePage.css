@@ -1,0 +1,147 @@
+/* Page container */
+.profile-page {
+  display: flex;
+  justify-content: center; /* center the card horizontally */
+  align-items: flex-start; /* align items to top */
+  padding: 80px 20px 50px 20px; /* top padding increased to 100px */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* My Profile heading */
+.profile-card h2 {
+  width: 100%;
+  text-align: left; /* align to left */
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 700;
+  border-bottom: 3px solid #667eea; /* underline style */
+  padding-bottom: 10px;
+}
+
+/* Card container */
+.profile-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: row; /* picture left, forms right */
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Profile picture section */
+.profile-pic-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.profile-pic-preview {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #667eea;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.pic-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Forms container */
+.profile-form, .password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 2 1 400px;
+}
+
+/* Heading styles */
+.profile-card h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.profile-form h3, .password-form h3 {
+  margin-bottom: 10px;
+  color: #667eea;
+  font-size: 22px;
+}
+
+/* Inputs & textarea */
+.profile-form input,
+.profile-form textarea,
+.password-form input {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.profile-form input:focus,
+.profile-form textarea:focus,
+.password-form input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Buttons */
+.profile-form button,
+.password-form button {
+  padding: 12px;
+  background: #667eea;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.profile-form button:hover,
+.password-form button:hover {
+  background: #5a67d8;
+  transform: scale(1.05);
+}
+
+/* Success message */
+.success-msg {
+  color: green;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .profile-card {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .profile-pic-section, .profile-form, .password-form {
+    flex: 1 1 100%;
+  }
+
+  .profile-card h2 {
+    font-size: 28px;
+  }
+}

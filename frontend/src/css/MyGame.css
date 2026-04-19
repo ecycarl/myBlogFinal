@@ -1,0 +1,56 @@
+/* Container */
+.game-container {
+  text-align: center;
+  padding: 30px;
+}
+
+/* Input */
+.name-input {
+  padding: 10px;
+  width: 250px;
+  margin: 15px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Avatar Grid */
+.avatars {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.avatar {
+  width: 90px;
+  cursor: pointer;
+  border: 4px solid transparent;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+}
+
+.selected {
+  border-color: #ffd700;
+  transform: scale(1.15);
+}
+
+/* Button */
+.start-btn {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #00bcd4, #007c91);
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+}

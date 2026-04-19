@@ -1,0 +1,146 @@
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+}
+
+/* HEADER */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+  color: white;
+  padding: 10px 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-logo {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: 18px;
+}
+
+/* NAV */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 6px 10px;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background: #2563eb;
+  border-radius: 5px;
+}
+
+/* Hamburger */
+.menu-icon {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* CONTENT */
+.content {
+  padding: 20px;
+}
+
+/* Sections */
+.content-section-about {
+  margin-bottom: 40px;
+}
+
+.section-highlight {
+  background: rgb(15, 12, 12);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Layout */
+.text-image-container-about {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.text-image-container-about.reverse {
+  flex-direction: row-reverse;
+}
+
+.text-block,
+.text-block-about {
+  flex: 1;
+}
+
+.image-block-about img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+/* Timeline */
+.timeline {
+  padding-left: 20px;
+}
+
+.timeline li {
+  margin-bottom: 8px;
+}
+
+/* Quote */
+.highlight-quote-about {
+  text-align: center;
+  font-style: italic;
+  background: #e0f2fe;
+  padding: 15px;
+  border-left: 5px solid #0284c7;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  background: #0f172a;
+  color: white;
+  padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .text-image-container-about {
+    flex-direction: column;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  #menu-toggle:checked ~ .nav {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background: #0f172a;
+    padding: 10px;
+  }
+}
