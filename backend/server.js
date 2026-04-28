@@ -12,6 +12,8 @@ const commentRoutes = require('./routes/comment.routes');
 const adminRoutes = require('./routes/admin.routes');
 const app = express();
 
+connectDB();
+
 // CORS FIRST
 app.use(cors({
   origin: [
