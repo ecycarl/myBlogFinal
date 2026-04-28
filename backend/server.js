@@ -18,7 +18,7 @@ connectDB(); // Connect to MongoDB
 app.use(cors({
 origin: [
     'http://localhost:3000',
-    'https://my-blog-final-fuzpjzoot-ecyvill-projects.vercel.app',
+    'my-blog-final-19wt3d5cy-ecyvill-projects.vercel.app',
     'https://my-blog-final-git-main-ecyvill-projects.vercel.app'
 ],
 credentials: true,
