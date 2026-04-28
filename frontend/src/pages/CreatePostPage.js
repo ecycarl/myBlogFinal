@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import API from '../api/axios';
+// import API from '../api/axios';
 import '../css/CreatePostPage.css';
 
 const CreatePostPage = () => {
@@ -9,7 +9,8 @@ const CreatePostPage = () => {
   const [body, setBody] = useState('');
   const [image, setImage] = useState(null);
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(''); // <-- New success state
+  const [success, setSuccess] = useState('');
+
   const { user } = useAuth();
   const navigate = useNavigate();
 
@@ -17,25 +18,27 @@ const CreatePostPage = () => {
     e.preventDefault();
     setError('');
     setSuccess('');
+
     const fd = new FormData();
     fd.append('title', title);
     fd.append('body', body);
     if (image) fd.append('image', image);
 
     try {
-    const { data } = await API.post('/posts', fd);
-    setSuccess('Post published successfully!'); // show success message
-    setTitle('');
-    setBody('');
-    setImage(null);
+      // Backend disabled (no API call)
+      // const response = await API.post('/posts', fd);
 
-    // Redirect to homepage after 2 seconds
-    setTimeout(() => {
-        navigate('/home'); // <-- go to homepage
-    }, 1000);
+      setSuccess('Post published successfully!');
+      setTitle('');
+      setBody('');
+      setImage(null);
+
+      setTimeout(() => {
+        navigate('/home');
+      }, 1000);
 
     } catch (err) {
-    setError(err.response?.data?.message || 'Failed to publish post');
+      setError('Failed to publish post');
     }
   };
 
@@ -43,19 +46,21 @@ const CreatePostPage = () => {
     <div className="create-post-page">
       <div className="post-card">
         <h2>Write a New Post</h2>
+
         {error && <p className="error-msg">{error}</p>}
-        {success && <p className="success-msg">{success}</p>} {/* Show success message */}
+        {success && <p className="success-msg">{success}</p>}
 
         <form onSubmit={handleSubmit} className="post-form">
           <input
             value={title}
-            onChange={e => setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)}
             placeholder="Post title"
             required
           />
+
           <textarea
             value={body}
-            onChange={e => setBody(e.target.value)}
+            onChange={(e) => setBody(e.target.value)}
             placeholder="Write your post here..."
             rows={12}
             required
@@ -64,7 +69,11 @@ const CreatePostPage = () => {
           {user?.role === 'admin' && (
             <div className="file-upload">
               <label>Upload Cover Image (Admin only):</label>
-              <input type="file" accept="image/*" onChange={e => setImage(e.target.files[0])} />
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => setImage(e.target.files[0])}
+              />
             </div>
           )}
 
