@@ -18,11 +18,14 @@ connectDB(); // Connect to MongoDB
 app.use(cors({
 origin: [
     'http://localhost:3000',
-    'my-blog-final-19wt3d5cy-ecyvill-projects.vercel.app',
+    'https://my-blog-final-e15id4tzs-ecyvill-projects.vercel.app',
     'https://my-blog-final-git-main-ecyvill-projects.vercel.app'
 ],
 credentials: true,
 }));
+
+app.options('*', cors());
+
 // Parse incoming JSON request bodies
 app.use(express.json());
 // Serve uploaded image files as public URLs
