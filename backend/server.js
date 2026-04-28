@@ -42,3 +42,7 @@ console.log(`Server is running on ${PORT}`);
 app.get("/", (req, res) => {
   res.send("Backend is running");
 });
+
+app.get("/test", (req, res) => {
+  res.json({ message: "API working fine" });
+});
