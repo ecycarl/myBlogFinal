@@ -35,14 +35,17 @@ app.use('/api/comments',    commentRoutes);
 app.use('/api/admin',       adminRoutes);
 // ── Start Server ──────────────────────────────────────────────
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-console.log(`Server is running on ${PORT}`);
-});
 
+// Routes FIRST
 app.get("/", (req, res) => {
-  res.send("Backend is running");
+  res.send("Backend is running 🚀");
 });
 
 app.get("/test", (req, res) => {
   res.json({ message: "API working fine" });
+});
+
+// THEN start server LAST
+app.listen(PORT, () => {
+  console.log(`Server is running on ${PORT}`);
 });
