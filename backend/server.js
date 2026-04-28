@@ -18,7 +18,7 @@ app.use(cors({
     'http://localhost:3000',
     'https://my-blog-final-opal.vercel.app',
     'https://my-blog-final-git-main-ecyvill-projects.vercel.app',
-    'https://my-blog-final-513oattqu-ecyvill-projects.vercel.app'
+    'https://my-blog-final-08a8-ecyvill-projects.vercel.app'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
