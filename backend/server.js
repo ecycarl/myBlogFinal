@@ -15,7 +15,13 @@ connectDB(); // Connect to MongoDB
 
 // ── Middleware ─────────────────────────────────────────────────
 // Allow React (port 3000) to call this server
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({
+origin: [
+'http://localhost:3000',
+'https://my-blog-final-opal.vercel.app/', // ← your Vercel URL (update after deployment)
+],
+credentials: true,
+}));
 // Parse incoming JSON request bodies
 app.use(express.json());
 // Serve uploaded image files as public URLs
@@ -30,5 +36,5 @@ app.use('/api/admin',       adminRoutes);
 // ── Start Server ──────────────────────────────────────────────
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-console.log(`Server is running on http://localhost:${PORT}`);
+console.log(`Server is running on ${PORT}`);
 });
