@@ -11,32 +11,34 @@ const postRoutes = require('./routes/post.routes');
 const commentRoutes = require('./routes/comment.routes');
 const adminRoutes = require('./routes/admin.routes');
 const app = express();
-connectDB(); // Connect to MongoDB
 
-// ── Middleware ─────────────────────────────────────────────────
-// Allow React (port 3000) to call this server
+// 1. CORS FIRST (must be before everything)
 app.use(cors({
-origin: [
+  origin: [
     'http://localhost:3000',
-    'https://my-blog-final-e15id4tzs-ecyvill-projects.vercel.app',
-    'https://my-blog-final-git-main-ecyvill-projects.vercel.app'
-],
-credentials: true,
+    'https://my-blog-final-opal.vercel.app',
+    'https://my-blog-final-git-main-ecyvill-projects.vercel.app',
+    'https://my-blog-final-513oattqu-ecyvill-projects.vercel.app'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
+// 2. HANDLE PREFLIGHT (CRITICAL)
 app.options('*', cors());
 
-// Parse incoming JSON request bodies
+// 3. BODY PARSER
 app.use(express.json());
-// Serve uploaded image files as public URLs
-// e.g. http://localhost:5000/uploads/my-image.jpg
+
+// 4. STATIC FILES
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// ── Routes ────────────────────────────────────────────────────
-app.use('/api/auth',        authRoutes);
-app.use('/api/posts',       postRoutes);
-app.use('/api/comments',    commentRoutes);
-app.use('/api/admin',       adminRoutes);
+// 5. ROUTES
+app.use('/api/auth', authRoutes);
+app.use('/api/posts', postRoutes);
+app.use('/api/comments', commentRoutes);
+app.use('/api/admin', adminRoutes);
 // ── Start Server ──────────────────────────────────────────────
 const PORT = process.env.PORT || 5000;
 
