@@ -12,7 +12,7 @@ const commentRoutes = require('./routes/comment.routes');
 const adminRoutes = require('./routes/admin.routes');
 const app = express();
 
-// 1. CORS FIRST (must be before everything)
+// CORS FIRST
 app.use(cors({
   origin: [
     'http://localhost:3000',
@@ -25,15 +25,13 @@ app.use(cors({
   credentials: true
 }));
 
+// 🔥 THIS IS REQUIRED (YOU ARE MISSING THIS)
+app.options('*', cors());
 
-
-// 3. BODY PARSER
+// BODY PARSER
 app.use(express.json());
 
-// 4. STATIC FILES
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-// 5. ROUTES
+// ROUTES
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/comments', commentRoutes);
