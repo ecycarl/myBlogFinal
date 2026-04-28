@@ -1,8 +1,9 @@
 // frontend/src/api/axios.js
 import axios from 'axios';
 const instance = axios.create({
-  baseURL: "https://myblogfinal-zfwz.onrender.com/api",
+  baseURL: process.env.REACT_APP_API_URL,
 });
+
 
 instance.interceptors.request.use((config) => {
 const token = localStorage.getItem('token');
