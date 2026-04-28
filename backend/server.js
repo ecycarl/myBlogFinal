@@ -25,9 +25,6 @@ app.use(cors({
   credentials: true
 }));
 
-// 🔥 THIS IS REQUIRED (YOU ARE MISSING THIS)
-app.options('/*', cors());
-
 // BODY PARSER
 app.use(express.json());
 
