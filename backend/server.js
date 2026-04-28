@@ -20,24 +20,12 @@ app.use(cors({
     'http://localhost:3000',
     'https://my-blog-final-opal.vercel.app',
     'https://my-blog-final-git-main-ecyvill-projects.vercel.app',
-    'https://my-blog-final-oks10hstb-ecyvill-projects.vercel.app'
+    'https://my-blog-final-5kvemxfkp-ecyvill-projects.vercel.app'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", req.headers.origin);
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-
-  next();
-});
 
 // BODY PARSER
 app.use(express.json());
