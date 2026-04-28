@@ -30,19 +30,24 @@ const LoginPage = () => {
 
         <form onSubmit={handleSubmit} className="login-form">
           <input
-            type="email"
-            placeholder="Email address"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-          />
+  id="email"
+  name="email"
+  type="email"
+  placeholder="Email address"
+  value={email}
+  onChange={e => setEmail(e.target.value)}
+  required
+/>
+
+<input
+  id="password"
+  name="password"
+  type="password"
+  placeholder="Password"
+  value={password}
+  onChange={e => setPassword(e.target.value)}
+  required
+/>
           <button type="submit">Login</button>
         </form>
 
