@@ -18,7 +18,7 @@ connectDB(); // Connect to MongoDB
 app.use(cors({
 origin: [
 'http://localhost:3000',
-'https://my-blog-final-opal.vercel.app/', // ← your Vercel URL (update after deployment)
+'https://myblogfinal-zfwz.onrender.com', // ← your Vercel URL (update after deployment)
 ],
 credentials: true,
 }));
