@@ -25,8 +25,7 @@ app.use(cors({
   credentials: true
 }));
 
-// 2. HANDLE PREFLIGHT (CRITICAL)
-app.options('*', cors());
+
 
 // 3. BODY PARSER
 app.use(express.json());
