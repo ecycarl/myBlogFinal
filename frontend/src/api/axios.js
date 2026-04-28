@@ -1,7 +1,7 @@
 // frontend/src/api/axios.js
 import axios from 'axios';
 const instance = axios.create({
-  baseURL: "https://myblogfinal-12xh.onrender.com/api",
+  baseURL: "https://myblogfinal-08a8.onrender.com/api",
 });
 
 instance.interceptors.request.use((config) => {
