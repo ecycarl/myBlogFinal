@@ -29,11 +29,12 @@ const LoginPage = () => {
         {error && <p className="error-msg">{error}</p>}
 
         <form onSubmit={handleSubmit} className="login-form">
-          <input
+<input
   id="email"
   name="email"
   type="email"
   placeholder="Email address"
+  autoComplete="email"
   value={email}
   onChange={e => setEmail(e.target.value)}
   required
@@ -44,6 +45,7 @@ const LoginPage = () => {
   name="password"
   type="password"
   placeholder="Password"
+  autoComplete="current-password"
   value={password}
   onChange={e => setPassword(e.target.value)}
   required
